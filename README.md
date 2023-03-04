@@ -1,5 +1,4 @@
-# Black Wave 
-<img src="./src/assets/svg/wave_3.svg?raw=true" alt= “repository logo” width="50" height="50">
+# Black Wave ![alt text](./src/assets/svg/wave_3.svg?raw=true)
 ## React base collection of components with storybook example
 
 ### IN PROGRESS
