@@ -1,7 +1,6 @@
-# Black Wave ![alt text](./src/assets/svg/wave_3.svg?raw=true)
-## React base collection of components with storybook example
+# [IN PROGRESS] Black Wave ![alt text](./src/assets/svg/logo.svg?raw=true)
 
-### IN PROGRESS
+## React base collection of components with storybook example
 
 ## Requirements:
 
