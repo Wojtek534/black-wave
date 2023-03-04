@@ -1,4 +1,4 @@
-# Black Wave ![alt text](./src/assets/svg/wave_3.svg?raw=true)
+# Black Wave ![alt text](./src/assets/svg/wave_3.svg?raw=true | width=50)
 
 ## React base collection of components with storybook example
 
