@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #121212;
+  --dark-primary: #f59e0b;
+  --header: white;
+  --dark-header: #111827;
+  --header-text: #1a1a1a;
+  --dark-header-text: white;
+  --background: white;
+  --dark-background: #111827;
+  --focus-color: #f59e0b;
+  --dark-focus-color: #f59e0b;
+}
+
+/*
+--primary: #3b82f6;
+--dark-primary: #f59e0b;
+--focus-color: #3b82f6;
+*/
