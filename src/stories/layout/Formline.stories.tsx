@@ -3,7 +3,7 @@ import {Formline} from "../../components/layout"
 import {LoremIpsumLong} from "../lorem-ipsum"
 
 export default {
-  title: "layout/Dataline",
+  title: "layout/Formline",
   component: Formline,
 } as Meta<typeof Formline>
 const Template: StoryFn<typeof Formline> = (args) => <Formline {...args} />
