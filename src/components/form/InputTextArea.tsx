@@ -1,4 +1,4 @@
-import {defaultFormClasses} from "../../stories/classes"
+import {InputClasses} from "../classes/Input"
 import {InputTextAreaProps} from "../interface"
 
 export function InputTextArea({
@@ -20,7 +20,7 @@ export function InputTextArea({
       id={id}
       name={name}
       rows={rows}
-      className={defaultFormClasses}
+      className={InputClasses}
       placeholder={placeholder}
       value={value}
       onChange={handleChange}

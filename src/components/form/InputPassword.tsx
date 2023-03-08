@@ -1,4 +1,4 @@
-import {defaultFormClasses} from "../../stories/classes"
+import {InputClasses} from "../classes/Input"
 import {InputPasswordProps} from "../interface"
 
 // Password input
@@ -21,7 +21,7 @@ export const InputPassword = ({
       id={id}
       name={name}
       autoComplete="address-level2"
-      className={defaultFormClasses}
+      className={InputClasses}
       value={value}
       onChange={handleChange}
       {...props}
