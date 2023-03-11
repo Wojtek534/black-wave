@@ -1,4 +1,5 @@
 export * from "./Checkbox"
+export * from "./Checkboxline"
 export * from "./FileUpload"
 export * from "./InputNumber"
 export * from "./InputPassword"

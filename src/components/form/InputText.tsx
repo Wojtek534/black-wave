@@ -1,4 +1,4 @@
-import {defaultFormClasses} from "../../stories/classes"
+import {InputClasses} from "../classes/Input"
 import {InputTextProps} from "../interface"
 
 // Text input
@@ -20,7 +20,7 @@ export function InputText({
       id={id}
       name={name}
       autoComplete="address-level2"
-      className={defaultFormClasses}
+      className={InputClasses}
       value={value}
       onChange={handleChange}
       {...props}

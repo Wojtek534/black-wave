@@ -1,4 +1,4 @@
-import {defaultFormClasses} from "../../stories/classes"
+import {InputClasses} from "../classes/Input"
 import {InputNumberProps} from "../interface"
 
 export function InputNumber({
@@ -21,7 +21,7 @@ export function InputNumber({
       id={id}
       name={name}
       autoComplete="address-level2"
-      className={defaultFormClasses}
+      className={InputClasses}
       value={value}
       min={min}
       max={max}

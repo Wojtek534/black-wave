@@ -10,7 +10,7 @@ import {
 import {classNames} from "../../components/utilities"
 import {Formline} from "../../components/layout/Formline"
 import payment_01 from "../../assets/img/payment_01.jpg"
-import wave from "../../assets/svg/wave_3.svg"
+import logo from "../../assets/svg/logo.svg"
 
 interface LoginProps {}
 
@@ -39,7 +39,7 @@ export function Login({}: LoginProps) {
             <form className="flex flex-col items-stretch justify-center max-w-lg">
               <div className="self-center items-center">
                 <Image
-                  src={wave}
+                  src={logo}
                   alt="payment image"
                   space={Space.None}
                   height="h-16"
