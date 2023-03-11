@@ -28,7 +28,7 @@ export function FileUpload({
     event.preventDefault()
     const value = event.currentTarget.files
     if (value && value.length > 0) {
-      let reader = new FileReader()
+      const reader = new FileReader()
       reader.readAsArrayBuffer(value[0])
       reader.onload = function () {
         if (reader.result instanceof ArrayBuffer) {
@@ -111,10 +111,10 @@ export function FileUpload({
 }
 
 const arrayBufferToBase64 = (buffer: ArrayBuffer) => {
-  var binary = ""
-  var bytes = new Uint8Array(buffer)
-  var len = bytes.byteLength
-  for (var i = 0; i < len; i++) {
+  let binary = ""
+  const bytes = new Uint8Array(buffer)
+  const len = bytes.byteLength
+  for (let i = 0; i < len; i++) {
     binary += String.fromCharCode(bytes[i])
   }
   return window.btoa(binary)
@@ -126,7 +126,7 @@ const downloadFile = (
   type = "application/octet-stream"
 ) => {
   const blob = new Blob([arrayBuffer], {type: type})
-  let link = document.createElement("a")
+  const link = document.createElement("a")
   link.download = name
   link.type = type
   link.href = URL.createObjectURL(blob)

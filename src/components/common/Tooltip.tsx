@@ -33,7 +33,7 @@ export function Tooltip({
 
   return (
     <Popover className="relative inline-block">
-      {({open}) => (
+      {() => (
         <>
           <Popover.Button as="div" {...buttonProps}>
             {target}

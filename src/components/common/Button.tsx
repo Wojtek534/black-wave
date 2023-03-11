@@ -33,7 +33,6 @@ function ButtonCommon(
     hover = Hover.Brightness,
     radius = Radius.Medium,
     space = Space.None,
-    isIcon = false,
     onClick,
     title,
     isDisabled = false,

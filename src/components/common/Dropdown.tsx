@@ -44,7 +44,6 @@ function DropdownCommon({
   radius = Radius.Medium,
   space = Space.None,
   size,
-  isIcon = false,
   label,
   title,
   isArrow = true,
