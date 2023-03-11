@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+/* eslint-disable no-empty-pattern */
 import {Navigate} from "../../components/common/Navigate"
 import {Appearance, NavigationSize, Radius} from "../../components/types"
 
 interface NotFoundProps {}
 
-export function NotFound({}: NotFoundProps) {
+export function NotFound({}: NotFoundProps): JSX.Element {
   return (
     <div className="flex flex-col items-center">
       <p className="text-lg font-semibold">404</p>

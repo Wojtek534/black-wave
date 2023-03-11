@@ -19,12 +19,12 @@ interface FileUploadProps {
 export function FileUpload({
   preUploadMessage = "PNG, JPG up to 10MB",
   onChange,
-}: FileUploadProps) {
+}: FileUploadProps): JSX.Element {
   const [file, setFile] = useState({} as ArrayBuffer)
   const [fileName, setFileName] = useState("")
   const [fileType, setFileType] = useState("")
 
-  const onHandleFileSelected = (event: React.FormEvent<HTMLInputElement>) => {
+  const onHandleFileSelected = (event: React.FormEvent<HTMLInputElement>): void => {
     event.preventDefault()
     const value = event.currentTarget.files
     if (value && value.length > 0) {
@@ -44,7 +44,7 @@ export function FileUpload({
     }
   }
 
-  const displayImage = () => {
+  const displayImage = (): JSX.Element | string => {
     if (file instanceof ArrayBuffer && file) {
       return (
         <img
@@ -58,7 +58,7 @@ export function FileUpload({
     }
   }
 
-  const download = () => {
+  const download = (): JSX.Element => {
     if (file instanceof ArrayBuffer && file) {
       return (
         <a
@@ -110,7 +110,7 @@ export function FileUpload({
   )
 }
 
-const arrayBufferToBase64 = (buffer: ArrayBuffer) => {
+const arrayBufferToBase64 = (buffer: ArrayBuffer): string => {
   let binary = ""
   const bytes = new Uint8Array(buffer)
   const len = bytes.byteLength
@@ -124,7 +124,7 @@ const downloadFile = (
   arrayBuffer: ArrayBuffer,
   name: string,
   type = "application/octet-stream"
-) => {
+): void => {
   const blob = new Blob([arrayBuffer], {type: type})
   const link = document.createElement("a")
   link.download = name

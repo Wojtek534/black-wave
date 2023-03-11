@@ -8,7 +8,7 @@ export function Tooltip({
   target,
   children,
   isPanelHover = true,
-}: TooltipProps) {
+}: TooltipProps): JSX.Element {
   const [isShowing, setIsShowing] = useState(false)
   let buttonProps = {}
   let transitionProps = {}

@@ -1,8 +1,10 @@
+/* eslint-disable no-empty-pattern */
+/* eslint-disable @typescript-eslint/no-empty-interface */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import {Panel} from "../../components/layout"
-import {Button, Dropdown, Image} from "../../components/common"
+import {Button, Dropdown} from "../../components/common"
 import {Appearance} from "../../components/types"
 import {classNames} from "../../components/utilities"
-import {Background} from "../../components/common/Background"
 
 interface NavigationScreenProps {}
 

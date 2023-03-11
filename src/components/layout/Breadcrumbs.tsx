@@ -11,7 +11,7 @@ interface BreadcrumbsItem {
   url: string
 }
 
-export function Breadcrumbs({items}: BreadcrumbsProps) {
+export function Breadcrumbs({items}: BreadcrumbsProps): JSX.Element {
   return (
     <div className="flex items-center my-1">
       {items.map((item, index) => {

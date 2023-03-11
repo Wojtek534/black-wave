@@ -10,7 +10,7 @@ export function Image({
   width = "w-full",
   radius = Radius.Medium,
   ...props
-}: ImageProps) {
+}: ImageProps): JSX.Element {
   return (
     <img
       src={src}

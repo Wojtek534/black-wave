@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/prop-types */
 import {Meta, StoryFn} from "@storybook/react"
 
 import {
@@ -13,7 +16,7 @@ import {
 import React from "react"
 import {makeData, Person} from "../../../data/makeData"
 
-function TableSample() {
+function TableSample(): JSX.Element {
   const rerender = React.useReducer(() => ({}), {})[1]
 
   const columns = React.useMemo<ColumnDef<Person>[]>(
@@ -72,7 +75,7 @@ function TableSample() {
   )
 
   const [data, setData] = React.useState(() => makeData(100000))
-  const refreshData = () => setData(() => makeData(100000))
+  const refreshData = (): void => setData(() => makeData(100000))
 
   return (
     <>
@@ -99,7 +102,7 @@ function Table({
 }: {
   data: Person[]
   columns: ColumnDef<Person>[]
-}) {
+}): JSX.Element {
   const table = useReactTable({
     data,
     columns,
@@ -232,7 +235,7 @@ function Filter({
 }: {
   column: Column<any, any>
   table: ReactTable<any>
-}) {
+}): JSX.Element {
   const firstValue = table
     .getPreFilteredRowModel()
     .flatRows[0]?.getValue(column.id)

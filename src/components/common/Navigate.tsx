@@ -23,7 +23,7 @@ export function Navigate({
   isActive = false,
   children,
   ...props
-}: NavigateProps) {
+}: NavigateProps): JSX.Element {
   const styling = classNames(
     ` ${
       isActive ? active : appearance

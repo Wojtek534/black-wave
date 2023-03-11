@@ -1,8 +1,8 @@
-export function LoremIpsumShort() {
+export function LoremIpsumShort(): JSX.Element {
   return <p>Lorem ipsum dolor sit amet</p>
 }
 
-export function LoremIpsumMedium() {
+export function LoremIpsumMedium(): JSX.Element {
   return (
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a odio
@@ -19,7 +19,7 @@ export function LoremIpsumMedium() {
   )
 }
 
-export function LoremIpsumLong() {
+export function LoremIpsumLong(): JSX.Element {
   return (
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a odio

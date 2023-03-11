@@ -29,7 +29,7 @@ export function Icon({
   )
 }
 
-function getIconSvg(type: IconList) {
+function getIconSvg(type: IconList): JSX.Element {
   switch (type) {
     case IconList.ARROW_PATH: {
       return (

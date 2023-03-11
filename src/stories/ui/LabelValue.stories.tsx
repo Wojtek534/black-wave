@@ -1,5 +1,4 @@
 import {Meta, StoryFn} from "@storybook/react"
-import {Badge} from "../../components/ui/Badge"
 import {LabelValue} from "../../components/ui/LabelValue"
 
 export default {

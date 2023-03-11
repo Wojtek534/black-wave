@@ -22,7 +22,7 @@ const pediatricians = [
   "Review",
 ]
 
-let listItems: ListProps = {
+const listItems: ListProps = {
   items: pediatricians.map((item) => {
     return {
       appearance: Appearance.GrayFill,

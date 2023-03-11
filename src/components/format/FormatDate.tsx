@@ -2,7 +2,7 @@ interface FormatDateProps {
   date: Date
 }
 
-export const FormatDate = ({date}: FormatDateProps) => {
+export function FormatDate ({date}: FormatDateProps): JSX.Element {
   const formattedDate = new Date(date).toLocaleDateString()
 
   return <>{formattedDate}</>

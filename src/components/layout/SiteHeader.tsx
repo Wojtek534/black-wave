@@ -9,7 +9,7 @@ export function SiteHeader({
   height = "h-12",
   rightContent = <ThemeSwitch />,
   children,
-}: SiteHeaderProps) {
+}: SiteHeaderProps): JSX.Element {
   return (
     <Disclosure
       as="nav"

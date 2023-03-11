@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {faker} from "@faker-js/faker"
 
 export type Person = {
@@ -10,7 +11,7 @@ export type Person = {
   subRows?: Person[]
 }
 
-const range = (len: number) => {
+const range = (len: number): number[] => {
   const arr = []
   for (let i = 0; i < len; i++) {
     arr.push(i)
@@ -33,10 +34,10 @@ const newPerson = (): Person => {
   }
 }
 
-export function makeData(...lens: number[]) {
+export function makeData(...lens: number[]): Person[] {
   const makeDataLevel = (depth = 0): Person[] => {
     const len = lens[depth]!
-    return range(len).map((d): Person => {
+    return range(len).map((): Person => {
       return {
         ...newPerson(),
         subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,

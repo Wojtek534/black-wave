@@ -4,7 +4,7 @@ interface BackgroundProps {
   src: string
 }
 
-export function Background({src}: BackgroundProps) {
+export function Background({src}: BackgroundProps): JSX.Element {
   return (
     <div
       className={classNames(

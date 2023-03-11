@@ -13,13 +13,13 @@ import {
 } from "../types"
 import {ListProps, PaginationProps, ListItemProps} from "../interface"
 
-export function List({items, limit = 10}: ListProps) {
+export function List({items, limit = 10}: ListProps): JSX.Element {
   const [currentPage, setCurrentPage] = useState(1)
   const lastIndex = currentPage * limit
   const firstIndex = lastIndex - limit
   const currentItems = items.slice(firstIndex, lastIndex)
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
+  const paginate = (pageNumber: number): void => setCurrentPage(pageNumber)
 
   return (
     <>
@@ -107,10 +107,10 @@ export function ListItem({
   onClick,
   children,
   ...props
-}: ListItemProps) {
+}: ListItemProps): JSX.Element {
   let localProps = {}
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
     event.preventDefault
     if (onClick) {
       onClick()

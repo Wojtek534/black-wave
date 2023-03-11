@@ -14,16 +14,16 @@ export interface PopupProps {
 }
 
 //Popup
-export const Popup = ({
+export function Popup ({
   header,
   action,
   children,
   isOpen,
   onClose,
-}: PopupProps) => {
+}: PopupProps): JSX.Element {
   const cancelButtonRef = useRef(null)
 
-  const closePopup = () => {
+  const closePopup = (): void => {
     onClose()
   }
 

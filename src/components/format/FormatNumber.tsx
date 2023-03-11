@@ -4,11 +4,11 @@ interface FormatNumberProps {
   currency?: string
 }
 
-export const FormatNumber = ({
+export function FormatNumber ({
   number,
   decimalPlaces = 2,
   currency,
-}: FormatNumberProps) => {
+}: FormatNumberProps): JSX.Element {
   const formattedNumber = number.toLocaleString(undefined, {
     minimumFractionDigits: decimalPlaces,
     maximumFractionDigits: decimalPlaces,

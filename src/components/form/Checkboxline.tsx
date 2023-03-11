@@ -5,7 +5,7 @@ export function Checkboxline({
   isVertical,
   children,
   ...props
-}: CheckboxlineProps) {
+}: CheckboxlineProps): JSX.Element {
   const orientation = isVertical ? "flex-col" : "flex-col md:flex-row"
   return (
     <div className={`flex mb-2 ${orientation}`} {...props}>
