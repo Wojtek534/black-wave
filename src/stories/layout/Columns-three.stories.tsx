@@ -1,16 +1,14 @@
-import {Meta, StoryFn} from "@storybook/react"
-import {LoremIpsumLong, LoremIpsumMedium} from "../lorem-ipsum"
-import {ColumnsThree} from "../../components/layout"
+import { Meta, StoryFn } from '@storybook/react';
+import { LoremIpsumLong, LoremIpsumMedium } from '../lorem-ipsum';
+import { ColumnsThree } from '../../components/layout';
 
 export default {
-  title: "layout/ColumnsThree",
+  title: 'layout/ColumnsThree',
   component: ColumnsThree,
-} as Meta<typeof ColumnsThree>
-const Template: StoryFn<typeof ColumnsThree> = (args) => (
-  <ColumnsThree {...args} />
-)
+} as Meta<typeof ColumnsThree>;
+const Template: StoryFn<typeof ColumnsThree> = (args) => <ColumnsThree {...args} />;
 
-export const Sample = Template.bind({})
+export const Sample = Template.bind({});
 Sample.args = {
   children: (
     <>
@@ -26,4 +24,4 @@ Sample.args = {
       </div>
     </>
   ),
-}
+};

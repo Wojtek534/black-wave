@@ -1,5 +1,5 @@
-import {BackgroundColor, BorderColor} from "./color"
-import {TextColor} from "./typography"
+import { BackgroundColor, BorderColor } from './color';
+import { TextColor } from './typography';
 
 /**
  * Appearance style set
@@ -14,6 +14,6 @@ export const Appearance = {
   GrayOutline: `${TextColor.Gray} ${BackgroundColor.White} border ${BorderColor.Gray} shadow-sm`,
   GrayText: `${TextColor.Gray} ${BackgroundColor.White} border ${BorderColor.Transparent}`,
   GrayTransparent: `${TextColor.Gray} border ${BorderColor.Transparent}`,
-} as const
+} as const;
 
-export type Appearance = (typeof Appearance)[keyof typeof Appearance]
+export type Appearance = (typeof Appearance)[keyof typeof Appearance];

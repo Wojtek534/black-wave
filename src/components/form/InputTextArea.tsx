@@ -1,5 +1,5 @@
-import {InputClasses} from "../classes/Input"
-import {InputTextAreaProps} from "../interface"
+import { InputClasses } from '../classes/Input';
+import { InputTextAreaProps } from '../interface';
 
 export function InputTextArea({
   id,
@@ -10,10 +10,10 @@ export function InputTextArea({
   onChange,
 }: InputTextAreaProps): JSX.Element {
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    event.preventDefault()
-    const value: string = event.currentTarget.value
-    onChange(value)
-  }
+    event.preventDefault();
+    const value: string = event.currentTarget.value;
+    onChange(value);
+  };
 
   return (
     <textarea
@@ -25,5 +25,5 @@ export function InputTextArea({
       value={value}
       onChange={handleChange}
     />
-  )
+  );
 }

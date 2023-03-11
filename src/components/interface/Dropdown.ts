@@ -1,78 +1,70 @@
-import {
-  Appearance,
-  FontWeight,
-  Hover,
-  Radius,
-  ButtonIconSize,
-  Space,
-  ButtonSize,
-} from "../types"
+import { Appearance, FontWeight, Hover, Radius, ButtonIconSize, Space, ButtonSize } from '../types';
 
 export interface DropdownProps extends DropdownCommonProps {
   /**
    * Button size
    */
-  buttonSize?: ButtonSize
+  buttonSize?: ButtonSize;
 }
 
 export interface DropdownIconProps extends DropdownCommonProps {
   /**
    * Button icon size
    */
-  buttonIconSize?: ButtonIconSize
+  buttonIconSize?: ButtonIconSize;
 }
 
 export interface DropdownCommonProps {
   /**
    * Toggle button color styling
    */
-  appearance: Appearance
+  appearance: Appearance;
   /**
    * Button styling when param 'isActive' is true
    */
-  active?: Appearance
+  active?: Appearance;
   /**
    * Label displayed on button with toggle
    */
-  label?: React.ReactNode
+  label?: React.ReactNode;
   /**
    * Clickable button name font weight
    */
-  fontWeight?: FontWeight
+  fontWeight?: FontWeight;
   /**
    * Set border radius
    */
-  radius?: Radius
+  radius?: Radius;
   /**
    * Button size for normal
    */
-  size?: ButtonSize | ButtonIconSize
+  size?: ButtonSize | ButtonIconSize;
   /**
    * On hover effect for button
    */
-  hover?: Hover
+  hover?: Hover;
   /**
    * Display button as icon
    */
-  isIcon?: boolean
+  isIcon?: boolean;
   /**
    *  Margin around button
    */
-  space?: Space
+  space?: Space;
   /**
    * Additional text displayed on hover
    */
-  title?: string
+  title?: string;
   /**
    * Display arrow up/down for open/close widget
    */
-  isArrow?: boolean
+  isArrow?: boolean;
   /**
    * Is button active amont other html elements?
    */
-  isActive?: boolean
+  isActive?: boolean;
   /**
    * Content displayed on toggle
    */
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 /* eslint-disable no-empty-pattern */
-import {Navigate} from "../../components/common/Navigate"
-import {Appearance, NavigationSize, Radius} from "../../components/types"
+import { Navigate } from '../../components/common/Navigate';
+import { Appearance, NavigationSize, Radius } from '../../components/types';
 
 interface NotFoundProps {}
 
@@ -25,5 +25,5 @@ export function NotFound({}: NotFoundProps): JSX.Element {
         </Navigate>
       </div>
     </div>
-  )
+  );
 }

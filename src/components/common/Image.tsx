@@ -1,13 +1,13 @@
-import {classNames} from "../utilities"
-import {Radius, Space} from "../types"
-import {ImageProps} from "../interface"
+import { classNames } from '../utilities';
+import { Radius, Space } from '../types';
+import { ImageProps } from '../interface';
 
 export function Image({
   src,
   alt,
   space = Space.None,
-  height = "h-96",
-  width = "w-full",
+  height = 'h-96',
+  width = 'w-full',
   radius = Radius.Medium,
   ...props
 }: ImageProps): JSX.Element {
@@ -16,9 +16,9 @@ export function Image({
       src={src}
       alt={alt}
       className={classNames(
-        `object-cover border border-transparent ${radius} ${height} ${width} ${space}`
+        `object-cover border border-transparent ${radius} ${height} ${width} ${space}`,
       )}
       {...props}
     />
-  )
+  );
 }

@@ -2,25 +2,25 @@ export interface InputTextAreaProps {
   /**
    * Input's value state
    */
-  value: string
+  value: string;
   /**
    * Action run after input change
    */
-  onChange: (value: string) => void
+  onChange: (value: string) => void;
   /**
    * Input's html id property
    */
-  id?: string
+  id?: string;
   /**
    * Input's html name property
    */
-  name?: string
+  name?: string;
   /**
    * Number of rows to fill text
    */
-  rows?: number
+  rows?: number;
   /**
    * Placeholder text value
    */
-  placeholder?: string
+  placeholder?: string;
 }

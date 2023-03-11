@@ -1,18 +1,18 @@
-import {Radius} from "../types"
+import { Radius } from '../types';
 
 export interface CheckboxProps {
-  value: boolean
-  onChange: (value: boolean) => void
+  value: boolean;
+  onChange: (value: boolean) => void;
   /**
    * Input's html id property
    */
-  id?: string
+  id?: string;
   /**
    * Input's html name property
    */
-  name?: string
+  name?: string;
   /**
    * Set border radius
    */
-  radius?: Radius
+  radius?: Radius;
 }

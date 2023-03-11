@@ -28,6 +28,7 @@
     "preview": "vite preview",
     "lint": "npx eslint ./src --ext .jsx,.js,.ts,.tsx",
     "lint-fix": "npx eslint ./src --ext .jsx,.js,.ts,.tsx --fix",
+    "format": "npx prettier --write src",
     "//": "New scripts to run and build Storybook with Tailwind",
     "storybook": "concurrently \"yarn:watch:*\"",
     "build-storybook": "concurrently \"yarn:build:*\"",

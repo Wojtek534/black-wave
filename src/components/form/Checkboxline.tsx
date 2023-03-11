@@ -1,4 +1,4 @@
-import {CheckboxlineProps} from "../interface/Checkboxline"
+import { CheckboxlineProps } from '../interface/Checkboxline';
 
 export function Checkboxline({
   checkbox,
@@ -6,11 +6,11 @@ export function Checkboxline({
   children,
   ...props
 }: CheckboxlineProps): JSX.Element {
-  const orientation = isVertical ? "flex-col" : "flex-col md:flex-row"
+  const orientation = isVertical ? 'flex-col' : 'flex-col md:flex-row';
   return (
     <div className={`flex mb-2 ${orientation}`} {...props}>
       <div>{checkbox}</div>
       <div>{children}</div>
     </div>
-  )
+  );
 }

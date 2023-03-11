@@ -1,38 +1,21 @@
-import {classNames} from "../utilities"
-import {
-  ButtonProps,
-  ButtonIconProps,
-  ButtonCommonProps,
-} from "../interface/Button"
-import {
-  ButtonSize,
-  ButtonIconSize,
-  Appearance,
-  FontWeight,
-  Hover,
-  Radius,
-  Space,
-} from "../types"
+import { classNames } from '../utilities';
+import { ButtonProps, ButtonIconProps, ButtonCommonProps } from '../interface/Button';
+import { ButtonSize, ButtonIconSize, Appearance, FontWeight, Hover, Radius, Space } from '../types';
 
-export function Button({buttonSize = ButtonSize.Base, ...props}: ButtonProps): JSX.Element {
-  return ButtonCommon({...props}, buttonSize)
+export function Button({ buttonSize = ButtonSize.Base, ...props }: ButtonProps): JSX.Element {
+  return ButtonCommon({ ...props }, buttonSize);
 }
 
 export function ButtonIcon({
   buttonIconSize = ButtonIconSize.Base,
   ...props
-
 }: ButtonIconProps): JSX.Element {
-  return ButtonCommon({...props}, buttonIconSize)
+  return ButtonCommon({ ...props }, buttonIconSize);
 }
-
-
 
 function ButtonCommon(
   {
     appearance = Appearance.GrayOutline,
-
-
     active = Appearance.GrayFill,
     fontWeight = FontWeight.Normal,
     hover = Hover.Brightness,
@@ -46,27 +29,23 @@ function ButtonCommon(
     children,
     ...props
   }: ButtonCommonProps,
-  size?: ButtonSize | ButtonIconSize
+  size?: ButtonSize | ButtonIconSize,
 ): JSX.Element {
-  const handleClick = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void => {
-    event.preventDefault
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+    event.preventDefault;
     if (onClick) {
-      onClick()
+      onClick();
     }
-  }
+  };
   const styling = classNames(
-    `${
-      isActive ? active : appearance
-    } ${fontWeight} ${hover} ${radius} ${space} ${size}`
-  )
+    `${isActive ? active : appearance} ${fontWeight} ${hover} ${radius} ${space} ${size}`,
+  );
   return (
     <button
-      type={isSubmit ? "submit" : "button"}
+      type={isSubmit ? 'submit' : 'button'}
       onClick={handleClick}
       disabled={isDisabled}
-      title={title ? title : ""}
+      title={title ? title : ''}
       // leading-none
       className={`inline-flex align-item justify-center items-center whitespace-nowrap border ${styling}`}
       tabIndex={0}
@@ -75,5 +54,5 @@ function ButtonCommon(
     >
       {children}
     </button>
-  )
+  );
 }

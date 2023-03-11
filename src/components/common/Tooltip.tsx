@@ -1,33 +1,33 @@
-import {Popover, Transition} from "@headlessui/react"
-import {Fragment, useState} from "react"
-import {TooltipProps} from "../interface"
-import {Trigger} from "../types"
+import { Popover, Transition } from '@headlessui/react';
+import { Fragment, useState } from 'react';
+import { TooltipProps } from '../interface';
+import { Trigger } from '../types';
 
 export function Tooltip({
-  trigger = "hover",
+  trigger = 'hover',
   target,
   children,
   isPanelHover = true,
 }: TooltipProps): JSX.Element {
-  const [isShowing, setIsShowing] = useState(false)
-  let buttonProps = {}
-  let transitionProps = {}
-  let panelProps = {}
+  const [isShowing, setIsShowing] = useState(false);
+  let buttonProps = {};
+  let transitionProps = {};
+  let panelProps = {};
   if (trigger === Trigger.Click) {
     // skip
   } else {
     buttonProps = {
       onMouseEnter: () => setIsShowing(true),
       onMouseLeave: () => setIsShowing(false),
-    }
+    };
     transitionProps = {
       show: isShowing,
-    }
+    };
     if (isPanelHover) {
       panelProps = {
         onMouseEnter: () => setIsShowing(true),
         onMouseLeave: () => setIsShowing(false),
-      }
+      };
     }
   }
 
@@ -58,5 +58,5 @@ export function Tooltip({
         </>
       )}
     </Popover>
-  )
+  );
 }

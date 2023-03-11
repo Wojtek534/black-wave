@@ -1,5 +1,5 @@
-import {InputClasses} from "../classes/Input"
-import {InputPasswordProps} from "../interface"
+import { InputClasses } from '../classes/Input';
+import { InputPasswordProps } from '../interface';
 
 // Password input
 export const InputPassword = ({
@@ -10,10 +10,10 @@ export const InputPassword = ({
   ...props
 }: InputPasswordProps): JSX.Element => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    event.preventDefault()
-    const value: string = event.currentTarget.value
-    onChange(value)
-  }
+    event.preventDefault();
+    const value: string = event.currentTarget.value;
+    onChange(value);
+  };
 
   return (
     <input
@@ -26,5 +26,5 @@ export const InputPassword = ({
       onChange={handleChange}
       {...props}
     />
-  )
-}
+  );
+};

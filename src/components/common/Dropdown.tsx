@@ -1,7 +1,7 @@
-import {Fragment} from "react"
-import {Menu, Transition} from "@headlessui/react"
-import {Icon} from "./Icon"
-import {classNames} from "../utilities"
+import { Fragment } from 'react';
+import { Menu, Transition } from '@headlessui/react';
+import { Icon } from './Icon';
+import { classNames } from '../utilities';
 
 import {
   Appearance,
@@ -12,25 +12,18 @@ import {
   Space,
   ButtonSize,
   IconList,
-} from "../types"
-import {
-  DropdownProps,
-  DropdownCommonProps,
-  DropdownIconProps,
-} from "../interface"
+} from '../types';
+import { DropdownProps, DropdownCommonProps, DropdownIconProps } from '../interface';
 
-export function Dropdown({
-  buttonSize = ButtonSize.Base,
-  ...props
-}: DropdownProps): JSX.Element {
-  return DropdownCommon({size: buttonSize, isIcon: false, ...props})
+export function Dropdown({ buttonSize = ButtonSize.Base, ...props }: DropdownProps): JSX.Element {
+  return DropdownCommon({ size: buttonSize, isIcon: false, ...props });
 }
 
 export function DropdownIcon({
   buttonIconSize = ButtonIconSize.Base,
   ...props
 }: DropdownIconProps): JSX.Element {
-  return DropdownCommon({size: buttonIconSize, isIcon: false, ...props})
+  return DropdownCommon({ size: buttonIconSize, isIcon: false, ...props });
 }
 
 /**
@@ -52,28 +45,24 @@ function DropdownCommon({
   ...props
 }: DropdownCommonProps): JSX.Element {
   const styling = classNames(
-    `${
-      isActive ? active : appearance
-    } ${fontWeight} ${hover} ${radius} ${space} ${size}`
-  )
+    `${isActive ? active : appearance} ${fontWeight} ${hover} ${radius} ${space} ${size}`,
+  );
 
   return (
     <Menu as="div" className={`relative inline-block text-left m-1`} {...props}>
-      {({open}) => (
+      {({ open }) => (
         <>
           <div>
             <Menu.Button
-              title={title ? title : ""}
+              title={title ? title : ''}
               className={classNames(
-                `inline-flex justify-center items-center w-full whitespace-pre ${styling}`
+                `inline-flex justify-center items-center w-full whitespace-pre ${styling}`,
               )}
             >
               {label}
               {isArrow ? (
                 <Icon
-                  extendedClass={classNames(
-                    `${open ? "rotate-180 transform" : ""} ml-2`
-                  )}
+                  extendedClass={classNames(`${open ? 'rotate-180 transform' : ''} ml-2`)}
                   icon={IconList.CHEVRON_DOWN}
                 />
               ) : (
@@ -93,7 +82,7 @@ function DropdownCommon({
           >
             <Menu.Items
               className={classNames(
-                `origin-top-right absolute right-0 z-10 text-xs hover:duration-300 mt-2 p-3 max-w-sm w-max rounded shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none`
+                `origin-top-right absolute right-0 z-10 text-xs hover:duration-300 mt-2 p-3 max-w-sm w-max rounded shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none`,
               )}
             >
               {children}
@@ -102,5 +91,5 @@ function DropdownCommon({
         </>
       )}
     </Menu>
-  )
+  );
 }

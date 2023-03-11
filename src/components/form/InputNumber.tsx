@@ -1,5 +1,5 @@
-import {InputClasses} from "../classes/Input"
-import {InputNumberProps} from "../interface"
+import { InputClasses } from '../classes/Input';
+import { InputNumberProps } from '../interface';
 
 export function InputNumber({
   id,
@@ -10,10 +10,10 @@ export function InputNumber({
   onChange,
 }: InputNumberProps): JSX.Element {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    event.preventDefault()
-    const value: number = parseInt(event.target.value, 10)
-    onChange(value)
-  }
+    event.preventDefault();
+    const value: number = parseInt(event.target.value, 10);
+    onChange(value);
+  };
 
   return (
     <input
@@ -27,5 +27,5 @@ export function InputNumber({
       max={max}
       onChange={handleChange}
     />
-  )
+  );
 }

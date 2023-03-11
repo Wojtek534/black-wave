@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import {Meta, StoryFn} from "@storybook/react"
+import { Meta, StoryFn } from '@storybook/react';
 
 import {
   Column,
@@ -12,27 +12,27 @@ import {
   getPaginationRowModel,
   ColumnDef,
   flexRender,
-} from "@tanstack/react-table"
-import React from "react"
-import {makeData, Person} from "../../../data/makeData"
+} from '@tanstack/react-table';
+import React from 'react';
+import { makeData, Person } from '../../../data/makeData';
 
 function TableSample(): JSX.Element {
-  const rerender = React.useReducer(() => ({}), {})[1]
+  const rerender = React.useReducer(() => ({}), {})[1];
 
   const columns = React.useMemo<ColumnDef<Person>[]>(
     () => [
       {
-        header: "Name",
+        header: 'Name',
         footer: (props) => props.column.id,
         columns: [
           {
-            accessorKey: "firstName",
+            accessorKey: 'firstName',
             cell: (info) => info.getValue(),
             footer: (props) => props.column.id,
           },
           {
             accessorFn: (row) => row.lastName,
-            id: "lastName",
+            id: 'lastName',
             cell: (info) => info.getValue(),
             header: () => <span>Last Name</span>,
             footer: (props) => props.column.id,
@@ -40,30 +40,30 @@ function TableSample(): JSX.Element {
         ],
       },
       {
-        header: "Info",
+        header: 'Info',
         footer: (props) => props.column.id,
         columns: [
           {
-            accessorKey: "age",
-            header: () => "Age",
+            accessorKey: 'age',
+            header: () => 'Age',
             footer: (props) => props.column.id,
           },
           {
-            header: "More Info",
+            header: 'More Info',
             columns: [
               {
-                accessorKey: "visits",
+                accessorKey: 'visits',
                 header: () => <span>Visits</span>,
                 footer: (props) => props.column.id,
               },
               {
-                accessorKey: "status",
-                header: "Status",
+                accessorKey: 'status',
+                header: 'Status',
                 footer: (props) => props.column.id,
               },
               {
-                accessorKey: "progress",
-                header: "Profile Progress",
+                accessorKey: 'progress',
+                header: 'Profile Progress',
                 footer: (props) => props.column.id,
               },
             ],
@@ -71,11 +71,11 @@ function TableSample(): JSX.Element {
         ],
       },
     ],
-    []
-  )
+    [],
+  );
 
-  const [data, setData] = React.useState(() => makeData(100000))
-  const refreshData = (): void => setData(() => makeData(100000))
+  const [data, setData] = React.useState(() => makeData(100000));
+  const refreshData = (): void => setData(() => makeData(100000));
 
   return (
     <>
@@ -93,16 +93,10 @@ function TableSample(): JSX.Element {
         <button onClick={() => refreshData()}>Refresh Data</button>
       </div>
     </>
-  )
+  );
 }
 
-function Table({
-  data,
-  columns,
-}: {
-  data: Person[]
-  columns: ColumnDef<Person>[]
-}): JSX.Element {
+function Table({ data, columns }: { data: Person[]; columns: ColumnDef<Person>[] }): JSX.Element {
   const table = useReactTable({
     data,
     columns,
@@ -112,7 +106,7 @@ function Table({
     getPaginationRowModel: getPaginationRowModel(),
     //
     debugTable: true,
-  })
+  });
 
   return (
     <div className="p-2">
@@ -126,10 +120,7 @@ function Table({
                   <th key={header.id} colSpan={header.colSpan}>
                     {header.isPlaceholder ? null : (
                       <div>
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
+                        {flexRender(header.column.columnDef.header, header.getContext())}
                         {header.column.getCanFilter() ? (
                           <div>
                             <Filter column={header.column} table={table} />
@@ -138,7 +129,7 @@ function Table({
                       </div>
                     )}
                   </th>
-                )
+                );
               })}
             </tr>
           ))}
@@ -150,15 +141,12 @@ function Table({
                 {row.getVisibleCells().map((cell) => {
                   return (
                     <td key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>
-                  )
+                  );
                 })}
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
@@ -169,34 +157,33 @@ function Table({
           onClick={() => table.setPageIndex(0)}
           disabled={!table.getCanPreviousPage()}
         >
-          {"<<"}
+          {'<<'}
         </button>
         <button
           className="border rounded p-1"
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          {"<"}
+          {'<'}
         </button>
         <button
           className="border rounded p-1"
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
-          {">"}
+          {'>'}
         </button>
         <button
           className="border rounded p-1"
           onClick={() => table.setPageIndex(table.getPageCount() - 1)}
           disabled={!table.getCanNextPage()}
         >
-          {">>"}
+          {'>>'}
         </button>
         <span className="flex items-center gap-1">
           <div>Page</div>
           <strong>
-            {table.getState().pagination.pageIndex + 1} of{" "}
-            {table.getPageCount()}
+            {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
           </strong>
         </span>
         <span className="flex items-center gap-1">
@@ -205,8 +192,8 @@ function Table({
             type="number"
             defaultValue={table.getState().pagination.pageIndex + 1}
             onChange={(e) => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0
-              table.setPageIndex(page)
+              const page = e.target.value ? Number(e.target.value) - 1 : 0;
+              table.setPageIndex(page);
             }}
             className="border p-1 rounded w-16"
           />
@@ -214,7 +201,7 @@ function Table({
         <select
           value={table.getState().pagination.pageSize}
           onChange={(e) => {
-            table.setPageSize(Number(e.target.value))
+            table.setPageSize(Number(e.target.value));
           }}
         >
           {[10, 20, 30, 40, 50].map((pageSize) => (
@@ -227,43 +214,35 @@ function Table({
       <div>{table.getRowModel().rows.length} Rows</div>
       <pre>{JSON.stringify(table.getState().pagination, null, 2)}</pre>
     </div>
-  )
+  );
 }
 function Filter({
   column,
   table,
 }: {
-  column: Column<any, any>
-  table: ReactTable<any>
+  column: Column<any, any>;
+  table: ReactTable<any>;
 }): JSX.Element {
-  const firstValue = table
-    .getPreFilteredRowModel()
-    .flatRows[0]?.getValue(column.id)
+  const firstValue = table.getPreFilteredRowModel().flatRows[0]?.getValue(column.id);
 
-  const columnFilterValue = column.getFilterValue()
+  const columnFilterValue = column.getFilterValue();
 
-  return typeof firstValue === "number" ? (
+  return typeof firstValue === 'number' ? (
     <div className="flex space-x-2">
       <input
         type="number"
-        value={(columnFilterValue as [number, number])?.[0] ?? ""}
+        value={(columnFilterValue as [number, number])?.[0] ?? ''}
         onChange={(e) =>
-          column.setFilterValue((old: [number, number]) => [
-            e.target.value,
-            old?.[1],
-          ])
+          column.setFilterValue((old: [number, number]) => [e.target.value, old?.[1]])
         }
         placeholder={`Min`}
         className="w-24 border shadow rounded"
       />
       <input
         type="number"
-        value={(columnFilterValue as [number, number])?.[1] ?? ""}
+        value={(columnFilterValue as [number, number])?.[1] ?? ''}
         onChange={(e) =>
-          column.setFilterValue((old: [number, number]) => [
-            old?.[0],
-            e.target.value,
-          ])
+          column.setFilterValue((old: [number, number]) => [old?.[0], e.target.value])
         }
         placeholder={`Max`}
         className="w-24 border shadow rounded"
@@ -272,19 +251,19 @@ function Filter({
   ) : (
     <input
       type="text"
-      value={(columnFilterValue ?? "") as string}
+      value={(columnFilterValue ?? '') as string}
       onChange={(e) => column.setFilterValue(e.target.value)}
       placeholder={`Search...`}
       className="w-36 border shadow rounded"
     />
-  )
+  );
 }
 
 export default {
-  title: "table/TablePagination",
+  title: 'table/TablePagination',
   component: TableSample,
-} as Meta<typeof TableSample>
-const Template: StoryFn<typeof TableSample> = (args) => <TableSample />
+} as Meta<typeof TableSample>;
+const Template: StoryFn<typeof TableSample> = (args) => <TableSample />;
 
-export const Sample = Template.bind({})
-Sample.args = {}
+export const Sample = Template.bind({});
+Sample.args = {};

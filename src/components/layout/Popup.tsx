@@ -1,31 +1,25 @@
 /* This example requires Tailwind CSS v2.0+ */
-import {Fragment, useRef} from "react"
-import {Dialog, Transition} from "@headlessui/react"
-import {Button} from "../common/Button"
-import {classNames} from "../utilities"
-import {Appearance, ButtonSize} from "../types"
+import { Fragment, useRef } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { Button } from '../common/Button';
+import { classNames } from '../utilities';
+import { Appearance, ButtonSize } from '../types';
 
 export interface PopupProps {
-  header?: string
-  action?: React.ReactNode
-  children: React.ReactNode
-  isOpen: boolean
-  onClose: () => void
+  header?: string;
+  action?: React.ReactNode;
+  children: React.ReactNode;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 //Popup
-export function Popup ({
-  header,
-  action,
-  children,
-  isOpen,
-  onClose,
-}: PopupProps): JSX.Element {
-  const cancelButtonRef = useRef(null)
+export function Popup({ header, action, children, isOpen, onClose }: PopupProps): JSX.Element {
+  const cancelButtonRef = useRef(null);
 
   const closePopup = (): void => {
-    onClose()
-  }
+    onClose();
+  };
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -45,15 +39,13 @@ export function Popup ({
           leaveTo="opacity-0"
         >
           <div
-            className={classNames(
-              `bg-gray-500 bg-opacity-75 transition-opacity fixed inset-0`
-            )}
+            className={classNames(`bg-gray-500 bg-opacity-75 transition-opacity fixed inset-0`)}
           />
         </Transition.Child>
 
         <div
           className={classNames(
-            `text-xs text-gray-700 dark:text-gray-200 fixed z-10 inset-0 overflow-y-auto`
+            `text-xs text-gray-700 dark:text-gray-200 fixed z-10 inset-0 overflow-y-auto`,
           )}
         >
           <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
@@ -82,7 +74,7 @@ export function Popup ({
                 </div>
                 <div
                   className={classNames(
-                    `bg-gray-50 dark:bg-gray-800 px-4 py-1 sm:px-6 sm:flex sm:flex-row-reverse`
+                    `bg-gray-50 dark:bg-gray-800 px-4 py-1 sm:px-6 sm:flex sm:flex-row-reverse`,
                   )}
                 >
                   <Button
@@ -100,5 +92,5 @@ export function Popup ({
         </div>
       </Dialog>
     </Transition.Root>
-  )
+  );
 }

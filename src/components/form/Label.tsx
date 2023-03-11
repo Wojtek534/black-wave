@@ -1,6 +1,6 @@
-import {LabelProps} from "../interface"
+import { LabelProps } from '../interface';
 
-export function Label({htmlFor, children}: LabelProps): JSX.Element {
+export function Label({ htmlFor, children }: LabelProps): JSX.Element {
   return (
     <label
       htmlFor={htmlFor}
@@ -8,5 +8,5 @@ export function Label({htmlFor, children}: LabelProps): JSX.Element {
     >
       {children}
     </label>
-  )
+  );
 }

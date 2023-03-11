@@ -1,7 +1,7 @@
-import {useState} from "react"
-import {classNames} from "../utilities"
-import {Button, ButtonIcon} from "./Button"
-import {Icon} from "./Icon"
+import { useState } from 'react';
+import { classNames } from '../utilities';
+import { Button, ButtonIcon } from './Button';
+import { Icon } from './Icon';
 import {
   Appearance,
   ButtonIconSize,
@@ -10,16 +10,16 @@ import {
   IconList,
   ListItemSize,
   Space,
-} from "../types"
-import {ListProps, PaginationProps, ListItemProps} from "../interface"
+} from '../types';
+import { ListProps, PaginationProps, ListItemProps } from '../interface';
 
-export function List({items, limit = 10}: ListProps): JSX.Element {
-  const [currentPage, setCurrentPage] = useState(1)
-  const lastIndex = currentPage * limit
-  const firstIndex = lastIndex - limit
-  const currentItems = items.slice(firstIndex, lastIndex)
+export function List({ items, limit = 10 }: ListProps): JSX.Element {
+  const [currentPage, setCurrentPage] = useState(1);
+  const lastIndex = currentPage * limit;
+  const firstIndex = lastIndex - limit;
+  const currentItems = items.slice(firstIndex, lastIndex);
 
-  const paginate = (pageNumber: number): void => setCurrentPage(pageNumber)
+  const paginate = (pageNumber: number): void => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -29,7 +29,7 @@ export function List({items, limit = 10}: ListProps): JSX.Element {
             <li className="" key={crypto.randomUUID()}>
               <ListItem {...item}>{item.children}</ListItem>
             </li>
-          )
+          );
         })}
       </ul>
       <Pagination
@@ -39,7 +39,7 @@ export function List({items, limit = 10}: ListProps): JSX.Element {
         paginate={paginate}
       />
     </>
-  )
+  );
 }
 
 function Pagination({
@@ -48,10 +48,10 @@ function Pagination({
   totalItems,
   paginate,
 }: PaginationProps): JSX.Element {
-  const pageNumbers = []
+  const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
-    pageNumbers.push(i)
+    pageNumbers.push(i);
   }
 
   return (
@@ -96,7 +96,7 @@ function Pagination({
         )}
       </ul>
     </nav>
-  )
+  );
 }
 
 export function ListItem({
@@ -108,32 +108,30 @@ export function ListItem({
   children,
   ...props
 }: ListItemProps): JSX.Element {
-  let localProps = {}
+  let localProps = {};
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
-    event.preventDefault
+    event.preventDefault;
     if (onClick) {
-      onClick()
+      onClick();
     }
-  }
+  };
 
   if (onClick) {
     localProps = {
       onClick: handleClick,
-    }
+    };
   }
 
   return (
     <div
       className={classNames(
-        `${appearance} ${hover} ${listItemSize} ${space} ${
-          onClick ? "pointer" : ""
-        }`
+        `${appearance} ${hover} ${listItemSize} ${space} ${onClick ? 'pointer' : ''}`,
       )}
       {...localProps}
       {...props}
     >
       {children}
     </div>
-  )
+  );
 }
