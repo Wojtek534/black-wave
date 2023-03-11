@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// Disable es lint cause widget is in development
 import {
   ColumnDef,
   flexRender,
@@ -20,9 +23,9 @@ interface TableProps<T> {
   filters?: TableFilter
 }
 
-export function Table<T>({tableData, columns, filters}: TableProps<T>) {
-  const [data, setData] = React.useState(() => [...tableData])
-  const rerender = React.useReducer(() => ({}), {})[1]
+export function Table<T>({tableData, columns, filters}: TableProps<T>): JSX.Element {
+  const [data] = React.useState(() => [...tableData])
+  //const rerender = React.useReducer(() => ({}), {})[1]
   const [sorting, setSorting] = React.useState<SortingState>([])
 
   const table = useReactTable({

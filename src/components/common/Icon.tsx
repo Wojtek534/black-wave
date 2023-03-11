@@ -10,7 +10,7 @@ export function Icon({
   extendedClass,
   ...props
 }: IconProps): JSX.Element {
-  let pathIcon: React.ReactNode = getIconSvg(icon)
+  const pathIcon: React.ReactNode = getIconSvg(icon)
 
   const viewBox = icon === IconList.PICTURE ? "0 0 48 48" : "0 0 24 24"
   return (
@@ -29,7 +29,7 @@ export function Icon({
   )
 }
 
-function getIconSvg(type: IconList) {
+function getIconSvg(type: IconList): JSX.Element {
   switch (type) {
     case IconList.ARROW_PATH: {
       return (

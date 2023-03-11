@@ -14,14 +14,14 @@ import {
   Space,
 } from "../types"
 
-export function Button({buttonSize = ButtonSize.Base, ...props}: ButtonProps) {
+export function Button({buttonSize = ButtonSize.Base, ...props}: ButtonProps): JSX.Element {
   return ButtonCommon({...props}, buttonSize)
 }
 
 export function ButtonIcon({
   buttonIconSize = ButtonIconSize.Base,
   ...props
-}: ButtonIconProps) {
+}: ButtonIconProps): JSX.Element {
   return ButtonCommon({...props}, buttonIconSize)
 }
 
@@ -33,7 +33,6 @@ function ButtonCommon(
     hover = Hover.Brightness,
     radius = Radius.Medium,
     space = Space.None,
-    isIcon = false,
     onClick,
     title,
     isDisabled = false,
@@ -46,7 +45,7 @@ function ButtonCommon(
 ): JSX.Element {
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  ): void => {
     event.preventDefault
     if (onClick) {
       onClick()

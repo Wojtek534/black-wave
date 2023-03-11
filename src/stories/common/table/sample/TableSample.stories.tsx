@@ -4,8 +4,8 @@ import {flexRender, getCoreRowModel, useReactTable} from "@tanstack/react-table"
 import React from "react"
 import {columns, defaultData} from "../../../data/table.data"
 
-function TableSample() {
-  const [data, setData] = React.useState(() => [...defaultData])
+function TableSample(): JSX.Element {
+  const [data] = React.useState(() => [...defaultData])
   const rerender = React.useReducer(() => ({}), {})[1]
   const table = useReactTable({
     data,
@@ -71,7 +71,7 @@ export default {
   title: "table/TableSample",
   component: TableSample,
 } as Meta<typeof TableSample>
-const Template: StoryFn<typeof TableSample> = (args) => <TableSample />
+const Template: StoryFn<typeof TableSample> = () => <TableSample />
 
 export const Sample = Template.bind({})
 Sample.args = {}

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Disable es lint cause widget is in development
 import {Column, Table as ReactTable} from "@tanstack/react-table"
 import {classNames} from "../utilities"
 
@@ -6,7 +8,7 @@ export interface TableFilter {
   table: ReactTable<any>
 }
 
-export function TableFilter({column, table}: TableFilter) {
+export function TableFilter({column, table}: TableFilter): JSX.Element {
   const classes =
     "block w-full px-2 py-1 bg-white dark:bg-gray-900 text-xs border-0 border-b border-gray-300 dark:border-gray-600 focus:border-black focus:ring-0 focus:outline-none"
   /*

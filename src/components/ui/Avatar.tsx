@@ -4,7 +4,7 @@ interface AvatarProps {
   src: string
 }
 
-export function Avatar({src}: AvatarProps) {
+export function Avatar({src}: AvatarProps): JSX.Element {
   return (
     <Image
       src={src}

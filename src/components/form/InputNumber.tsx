@@ -8,8 +8,8 @@ export function InputNumber({
   min = 0,
   max = 1000,
   onChange,
-}: InputNumberProps) {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+}: InputNumberProps): JSX.Element {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault()
     const value: number = parseInt(event.target.value, 10)
     onChange(value)

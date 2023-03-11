@@ -8,8 +8,8 @@ export function InputTextArea({
   rows = 3,
   placeholder,
   onChange,
-}: InputTextAreaProps) {
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+}: InputTextAreaProps): JSX.Element {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
     event.preventDefault()
     const value: string = event.currentTarget.value
     onChange(value)

@@ -2,7 +2,7 @@ import {useEffect, useState} from "react"
 import {Icon} from "../common"
 import {IconList, StrokeColor, IconSize} from "../types"
 
-export function ThemeSwitch() {
+export function ThemeSwitch(): JSX.Element {
   const themeKey = "theme"
   const lightTheme = "light"
   const darkTheme = "dark"
@@ -29,7 +29,7 @@ export function ThemeSwitch() {
     }
   }, [])
 
-  function setThemeClass(newTheme: string) {
+  function setThemeClass(newTheme: string): void {
     if (
       newTheme !== lightTheme &&
       document.documentElement.classList.contains(lightTheme)
@@ -44,7 +44,7 @@ export function ThemeSwitch() {
     document.documentElement.classList.add(newTheme)
   }
 
-  function switchTheme() {
+  function switchTheme(): void {
     switch (theme) {
       case lightTheme: {
         setTheme(darkTheme)

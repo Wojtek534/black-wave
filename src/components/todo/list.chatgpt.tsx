@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Disable es lint cause widget is in development
 import React, {useState} from "react"
 
 interface Props {
@@ -12,7 +15,7 @@ const List: React.FC<Props> = ({items, itemsPerPage}) => {
   const firstIndex = lastIndex - itemsPerPage
   const currentItems = items.slice(firstIndex, lastIndex)
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber)
+  const paginate = (pageNumber: number): void => setCurrentPage(pageNumber)
 
   return (
     <>

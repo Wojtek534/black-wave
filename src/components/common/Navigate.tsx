@@ -23,9 +23,11 @@ export function Navigate({
   isActive = false,
   children,
   ...props
-}: NavigateProps) {
+}: NavigateProps): JSX.Element {
   const styling = classNames(
-    `${appearance} ${fontSize} ${fontWeight} ${space} ${navigationSize} ${radius} ${hover}`
+    ` ${
+      isActive ? active : appearance
+    } ${appearance} ${fontSize} ${fontWeight} ${space} ${navigationSize} ${radius} ${hover}`
   )
   return (
     <a

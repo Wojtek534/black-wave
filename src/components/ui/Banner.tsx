@@ -5,7 +5,7 @@ interface BannerProps {
   children: React.ReactNode
 }
 
-export function Banner({children}: BannerProps) {
+export function Banner({children}: BannerProps): JSX.Element {
   return (
     <div className="relative isolate flex items-center gap-x-6 overflow-hidden text-gray-200 bg-gray-800 py-2.5 px-6 sm:px-3.5 sm:before:flex-1">
       <div className="flex flex-wrap items-center gap-y-2 gap-x-4">

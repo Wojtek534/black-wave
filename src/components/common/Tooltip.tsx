@@ -8,7 +8,7 @@ export function Tooltip({
   target,
   children,
   isPanelHover = true,
-}: TooltipProps) {
+}: TooltipProps): JSX.Element {
   const [isShowing, setIsShowing] = useState(false)
   let buttonProps = {}
   let transitionProps = {}
@@ -33,7 +33,7 @@ export function Tooltip({
 
   return (
     <Popover className="relative inline-block">
-      {({open}) => (
+      {() => (
         <>
           <Popover.Button as="div" {...buttonProps}>
             {target}

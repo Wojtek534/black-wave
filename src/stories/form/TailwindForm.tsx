@@ -1,17 +1,5 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+/* eslint-disable no-empty-pattern */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 export default function TailwindForm({}) {
   return (
     <>
@@ -339,7 +327,7 @@ export default function TailwindForm({}) {
                 Notifications
               </h3>
               <p className="mt-1 text-sm text-gray-600">
-                Decide which communications you'd like to receive and how.
+                Decide which communications you would like to receive and how.
               </p>
             </div>
           </div>

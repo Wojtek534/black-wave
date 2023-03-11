@@ -9,7 +9,7 @@ export function LabelValue({
   label,
   children,
   orientation = Orientation.Vertical,
-}: LabelValueProps) {
+}: LabelValueProps): JSX.Element {
   return (
     <div className={`inline-flex ${orientation}`}>
       <div

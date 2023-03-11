@@ -8,8 +8,8 @@ export function InputText({
   value,
   onChange,
   ...props
-}: InputTextProps) {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+}: InputTextProps): JSX.Element {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault()
     onChange(event.target.value)
   }

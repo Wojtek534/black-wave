@@ -22,14 +22,14 @@ import {
 export function Dropdown({
   buttonSize = ButtonSize.Base,
   ...props
-}: DropdownProps) {
+}: DropdownProps): JSX.Element {
   return DropdownCommon({size: buttonSize, isIcon: false, ...props})
 }
 
 export function DropdownIcon({
   buttonIconSize = ButtonIconSize.Base,
   ...props
-}: DropdownIconProps) {
+}: DropdownIconProps): JSX.Element {
   return DropdownCommon({size: buttonIconSize, isIcon: false, ...props})
 }
 
@@ -44,14 +44,13 @@ function DropdownCommon({
   radius = Radius.Medium,
   space = Space.None,
   size,
-  isIcon = false,
   label,
   title,
   isArrow = true,
   isActive = false,
   children,
   ...props
-}: DropdownCommonProps) {
+}: DropdownCommonProps): JSX.Element {
   const styling = classNames(
     `${
       isActive ? active : appearance

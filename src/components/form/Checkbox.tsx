@@ -8,8 +8,8 @@ export function Checkbox({
   id,
   name,
   radius = "rounded",
-}: CheckboxProps) {
-  const onHandleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
+}: CheckboxProps): JSX.Element {
+  const onHandleInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
     const value: boolean = event.currentTarget.checked
     onChange(value)
   }

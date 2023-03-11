@@ -28,7 +28,7 @@ export function Layout({
   globalFontSize = "text-base",
   globalFontColor = "text-gray-900 dark:text-gray-100",
   children,
-}: LayoutProps) {
+}: LayoutProps): JSX.Element {
   const grid = "grid gap-2 auto-rows-auto mx-5 md:ml-40 md:mr-40"
   return (
     <div

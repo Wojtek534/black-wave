@@ -12,7 +12,7 @@ export function Panel({
   margin = Space.Base,
   showHeader = true,
   children,
-}: PanelProps) {
+}: PanelProps): JSX.Element {
   // border-b border-gray-300 dark:border-gray-600 color-primary dark:color-dark-primary
   return (
     <div

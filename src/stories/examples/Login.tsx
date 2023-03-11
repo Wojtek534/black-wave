@@ -1,3 +1,6 @@
+/* eslint-disable no-empty-pattern */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import {Panel} from "../../components/layout/Panel"
 import {Button, Navigate, Image} from "../../components/common"
 import {InputText, InputPassword} from "../../components/form"

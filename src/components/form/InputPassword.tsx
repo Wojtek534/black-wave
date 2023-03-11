@@ -8,8 +8,8 @@ export const InputPassword = ({
   value,
   onChange,
   ...props
-}: InputPasswordProps) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+}: InputPasswordProps): JSX.Element => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault()
     const value: string = event.currentTarget.value
     onChange(value)

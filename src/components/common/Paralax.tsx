@@ -4,6 +4,6 @@ interface ParalaxProps {
   src?: string
 }
 // TODO
-export function Paralax({src}: ParalaxProps) {
+export function Paralax({src}: ParalaxProps): JSX.Element {
   return <div className={classNames(`bg-[url(${src})`)} />
 }

@@ -9,7 +9,7 @@ export function Tabs({
   tabs,
   appearance = Appearance.PrimaryTransparent,
   active = Appearance.PrimaryFill,
-}: TabProps) {
+}: TabProps): JSX.Element {
   return (
     <Tab.Group>
       <Tab.List
