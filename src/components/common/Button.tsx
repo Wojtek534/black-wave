@@ -21,13 +21,18 @@ export function Button({buttonSize = ButtonSize.Base, ...props}: ButtonProps): J
 export function ButtonIcon({
   buttonIconSize = ButtonIconSize.Base,
   ...props
+
 }: ButtonIconProps): JSX.Element {
   return ButtonCommon({...props}, buttonIconSize)
 }
 
+
+
 function ButtonCommon(
   {
     appearance = Appearance.GrayOutline,
+
+
     active = Appearance.GrayFill,
     fontWeight = FontWeight.Normal,
     hover = Hover.Brightness,
