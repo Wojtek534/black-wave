@@ -1,17 +1,15 @@
-import { classNames } from "../utilities";
-import { ButtonProps, ButtonIconProps, ButtonCommonProps } from "../interface/Button";
-import { ButtonSize, ButtonIconSize, Appearance, FontWeight, Hover, Radius, Space } from "../types";
+import { classNames } from '../utilities';
+import { ButtonProps, ButtonIconProps, ButtonCommonProps } from '../interface/Button';
+import { ButtonSize, ButtonIconSize, Appearance, FontWeight, Hover, Radius, Space } from '../types';
 
-export function Button({ buttonSize = ButtonSize.Base, ...props }: ButtonProps): JSX.Element
-{
+export function Button({ buttonSize = ButtonSize.Base, ...props }: ButtonProps): JSX.Element {
   return ButtonCommon({ ...props }, buttonSize);
 }
 
 export function ButtonIcon({
   buttonIconSize = ButtonIconSize.Base,
   ...props
-}: ButtonIconProps): JSX.Element
-{
+}: ButtonIconProps): JSX.Element {
   return ButtonCommon({ ...props }, buttonIconSize);
 }
 
@@ -44,10 +42,10 @@ function ButtonCommon(
   );
   return (
     <button
-      type={isSubmit ? "submit" : "button"}
+      type={isSubmit ? 'submit' : 'button'}
       onClick={handleClick}
       disabled={isDisabled}
-      title={title ? title : ""}
+      title={title ? title : ''}
       // leading-none
       className={`inline-flex align-item justify-center items-center whitespace-nowrap border ${styling}`}
       tabIndex={0}
