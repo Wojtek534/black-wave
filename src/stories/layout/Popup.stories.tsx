@@ -1,19 +1,19 @@
-import {Meta, StoryFn} from "@storybook/react"
-import {LoremIpsumLong} from "../lorem-ipsum"
-import {Popup} from "../../components/layout/Popup"
+import { Meta, StoryFn } from '@storybook/react';
+import { LoremIpsumLong } from '../lorem-ipsum';
+import { Popup } from '../../components/layout/Popup';
 
 export default {
-  title: "layout/Popup",
+  title: 'layout/Popup',
   component: Popup,
-} as Meta<typeof Popup>
-const Template: StoryFn<typeof Popup> = (args) => <Popup {...args} />
+} as Meta<typeof Popup>;
+const Template: StoryFn<typeof Popup> = (args) => <Popup {...args} />;
 
-export const Sample = Template.bind({})
+export const Sample = Template.bind({});
 Sample.args = {
-  header: "Popup header",
+  header: 'Popup header',
   isOpen: true,
   onClose: () => {
-    console.log("Close")
+    console.log('Close');
   },
   children: LoremIpsumLong(),
-}
+};

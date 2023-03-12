@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Disable es lint cause widget is in development
-import React, {useState} from "react"
+import React, { useState } from 'react';
 
 interface Props {
-  items: Array<any>
-  itemsPerPage: number
+  items: Array<any>;
+  itemsPerPage: number;
 }
 
-const List: React.FC<Props> = ({items, itemsPerPage}) => {
-  const [currentPage, setCurrentPage] = useState(1)
+const List: React.FC<Props> = ({ items, itemsPerPage }) => {
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const lastIndex = currentPage * itemsPerPage
-  const firstIndex = lastIndex - itemsPerPage
-  const currentItems = items.slice(firstIndex, lastIndex)
+  const lastIndex = currentPage * itemsPerPage;
+  const firstIndex = lastIndex - itemsPerPage;
+  const currentItems = items.slice(firstIndex, lastIndex);
 
-  const paginate = (pageNumber: number): void => setCurrentPage(pageNumber)
+  const paginate = (pageNumber: number): void => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -31,14 +31,14 @@ const List: React.FC<Props> = ({items, itemsPerPage}) => {
         currentPage={currentPage}
       />
     </>
-  )
-}
+  );
+};
 
 interface PaginationProps {
-  itemsPerPage: number
-  totalItems: number
-  paginate: (pageNumber: number) => void
-  currentPage: number
+  itemsPerPage: number;
+  totalItems: number;
+  paginate: (pageNumber: number) => void;
+  currentPage: number;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -47,10 +47,10 @@ const Pagination: React.FC<PaginationProps> = ({
   paginate,
   currentPage,
 }) => {
-  const pageNumbers = []
+  const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
-    pageNumbers.push(i)
+    pageNumbers.push(i);
   }
 
   return (
@@ -65,10 +65,10 @@ const Pagination: React.FC<PaginationProps> = ({
         ))}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default List
+export default List;
 
 /*
 In this example, the List component takes in an array of items and the number of items per page to display. 

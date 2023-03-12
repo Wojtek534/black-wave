@@ -1,48 +1,43 @@
-import {useState} from "react"
-import {Icon} from "../common/Icon"
-import {IconList, IconSize} from "../types"
+import { useState } from 'react';
+import { Icon } from '../common/Icon';
+import { IconList, IconSize } from '../types';
 
 interface FileUploadProps {
   /**
    * Message for users, containing for example information about required file types
    */
-  preUploadMessage?: string
+  preUploadMessage?: string;
 
-  onChange: (
-    name: string,
-    type: string,
-    size: number,
-    file: ArrayBuffer
-  ) => void
+  onChange: (name: string, type: string, size: number, file: ArrayBuffer) => void;
 }
 
 export function FileUpload({
-  preUploadMessage = "PNG, JPG up to 10MB",
+  preUploadMessage = 'PNG, JPG up to 10MB',
   onChange,
 }: FileUploadProps): JSX.Element {
-  const [file, setFile] = useState({} as ArrayBuffer)
-  const [fileName, setFileName] = useState("")
-  const [fileType, setFileType] = useState("")
+  const [file, setFile] = useState({} as ArrayBuffer);
+  const [fileName, setFileName] = useState('');
+  const [fileType, setFileType] = useState('');
 
   const onHandleFileSelected = (event: React.FormEvent<HTMLInputElement>): void => {
-    event.preventDefault()
-    const value = event.currentTarget.files
+    event.preventDefault();
+    const value = event.currentTarget.files;
     if (value && value.length > 0) {
-      const reader = new FileReader()
-      reader.readAsArrayBuffer(value[0])
+      const reader = new FileReader();
+      reader.readAsArrayBuffer(value[0]);
       reader.onload = function () {
         if (reader.result instanceof ArrayBuffer) {
-          onChange(value[0].name, value[0].type, value[0].size, reader.result)
-          setFile(reader.result)
-          setFileName(value[0].name)
-          setFileType(value[0].type)
+          onChange(value[0].name, value[0].type, value[0].size, reader.result);
+          setFile(reader.result);
+          setFileName(value[0].name);
+          setFileType(value[0].type);
         }
-      }
+      };
       reader.onerror = function () {
-        console.log(reader.error)
-      }
+        console.log(reader.error);
+      };
     }
-  }
+  };
 
   const displayImage = (): JSX.Element | string => {
     if (file instanceof ArrayBuffer && file) {
@@ -50,13 +45,13 @@ export function FileUpload({
         <img
           width="250px"
           height="250px"
-          src={"data:image/jpeg;base64," + arrayBufferToBase64(file)}
+          src={'data:image/jpeg;base64,' + arrayBufferToBase64(file)}
         />
-      )
+      );
     } else {
-      return "No Files"
+      return 'No Files';
     }
-  }
+  };
 
   const download = (): JSX.Element => {
     if (file instanceof ArrayBuffer && file) {
@@ -64,17 +59,17 @@ export function FileUpload({
         <a
           className="text-xs text-gray-500 dark:text-gray-400 hover:cursor-pointer"
           onClick={() => {
-            downloadFile(file, fileName, fileType)
+            downloadFile(file, fileName, fileType);
           }}
         >
-          {" "}
+          {' '}
           Download
         </a>
-      )
+      );
     } else {
-      return <></>
+      return <></>;
     }
-  }
+  };
 
   return (
     <>
@@ -97,9 +92,7 @@ export function FileUpload({
             </label>
             <p className="pl-1">or drag and drop</p>
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            {preUploadMessage}
-          </p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">{preUploadMessage}</p>
         </div>
       </div>
       <div className="container">
@@ -107,29 +100,29 @@ export function FileUpload({
         {download()}
       </div>
     </>
-  )
+  );
 }
 
 const arrayBufferToBase64 = (buffer: ArrayBuffer): string => {
-  let binary = ""
-  const bytes = new Uint8Array(buffer)
-  const len = bytes.byteLength
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  const len = bytes.byteLength;
   for (let i = 0; i < len; i++) {
-    binary += String.fromCharCode(bytes[i])
+    binary += String.fromCharCode(bytes[i]);
   }
-  return window.btoa(binary)
-}
+  return window.btoa(binary);
+};
 
 const downloadFile = (
   arrayBuffer: ArrayBuffer,
   name: string,
-  type = "application/octet-stream"
+  type = 'application/octet-stream',
 ): void => {
-  const blob = new Blob([arrayBuffer], {type: type})
-  const link = document.createElement("a")
-  link.download = name
-  link.type = type
-  link.href = URL.createObjectURL(blob)
-  link.click()
-  link.remove()
-}
+  const blob = new Blob([arrayBuffer], { type: type });
+  const link = document.createElement('a');
+  link.download = name;
+  link.type = type;
+  link.href = URL.createObjectURL(blob);
+  link.click();
+  link.remove();
+};

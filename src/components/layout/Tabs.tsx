@@ -1,9 +1,9 @@
-import {Tab} from "@headlessui/react"
-import {Fragment} from "react"
-import {Button} from "../common/Button"
-import {Appearance, Space} from "../types"
-import {classNames} from "../utilities"
-import {TabProps} from "../interface/Tabs"
+import { Tab } from '@headlessui/react';
+import { Fragment } from 'react';
+import { Button } from '../common/Button';
+import { Appearance, Space } from '../types';
+import { classNames } from '../utilities';
+import { TabProps } from '../interface/Tabs';
 
 export function Tabs({
   tabs,
@@ -12,15 +12,11 @@ export function Tabs({
 }: TabProps): JSX.Element {
   return (
     <Tab.Group>
-      <Tab.List
-        className={classNames(
-          `py-2 border-b border-primary dark:border-dark-primary`
-        )}
-      >
+      <Tab.List className={classNames(`py-2 border-b border-primary dark:border-dark-primary`)}>
         {tabs.map((tab) => {
           return (
             <Tab as={Fragment} key={crypto.randomUUID()}>
-              {({selected}) => (
+              {({ selected }) => (
                 <Button
                   appearance={appearance}
                   isActive={selected}
@@ -31,18 +27,16 @@ export function Tabs({
                 </Button>
               )}
             </Tab>
-          )
+          );
         })}
       </Tab.List>
       <Tab.Panels as={Fragment}>
         <div className="pt-4">
           {tabs.map((tab) => {
-            return (
-              <Tab.Panel key={crypto.randomUUID()}>{tab.content}</Tab.Panel>
-            )
+            return <Tab.Panel key={crypto.randomUUID()}>{tab.content}</Tab.Panel>;
           })}
         </div>
       </Tab.Panels>
     </Tab.Group>
-  )
+  );
 }

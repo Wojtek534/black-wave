@@ -1,10 +1,10 @@
 interface FormatNumberProps {
-  number: number
-  decimalPlaces?: number
-  currency?: string
+  number: number;
+  decimalPlaces?: number;
+  currency?: string;
 }
 
-export function FormatNumber ({
+export function FormatNumber({
   number,
   decimalPlaces = 2,
   currency,
@@ -12,9 +12,9 @@ export function FormatNumber ({
   const formattedNumber = number.toLocaleString(undefined, {
     minimumFractionDigits: decimalPlaces,
     maximumFractionDigits: decimalPlaces,
-    style: "currency",
+    style: 'currency',
     currency,
-  })
+  });
 
-  return <span>{formattedNumber}</span>
+  return <span>{formattedNumber}</span>;
 }

@@ -1,18 +1,12 @@
-import {InputClasses} from "../classes/Input"
-import {InputTextProps} from "../interface"
+import { InputClasses } from '../classes/Input';
+import { InputTextProps } from '../interface';
 
 // Text input
-export function InputText({
-  id,
-  name,
-  value,
-  onChange,
-  ...props
-}: InputTextProps): JSX.Element {
+export function InputText({ id, name, value, onChange, ...props }: InputTextProps): JSX.Element {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    event.preventDefault()
-    onChange(event.target.value)
-  }
+    event.preventDefault();
+    onChange(event.target.value);
+  };
 
   return (
     <input
@@ -25,5 +19,5 @@ export function InputText({
       onChange={handleChange}
       {...props}
     />
-  )
+  );
 }

@@ -1,56 +1,48 @@
-import {
-  Appearance,
-  NavigationSize,
-  FontSize,
-  FontWeight,
-  Space,
-  Hover,
-  Radius,
-} from "../types"
+import { Appearance, NavigationSize, FontSize, FontWeight, Space, Hover, Radius } from '../types';
 
 export interface NavigateProps {
   /**
    * Link styling appearance
    */
-  appearance: Appearance
+  appearance: Appearance;
   /**
    * Button styling when param 'isActive' is true
    */
-  active?: Appearance
+  active?: Appearance;
   /**
    * Navigation destination
    */
-  href?: string
+  href?: string;
   /**
    * Link size
    */
-  navigationSize?: NavigationSize
+  navigationSize?: NavigationSize;
   /**
    * Set font size of link
    */
-  fontSize?: FontSize
+  fontSize?: FontSize;
   /**
    * Clickable link name font weight
    */
-  fontWeight?: FontWeight
+  fontWeight?: FontWeight;
   /**
    *  Margin around link
    */
-  space?: Space
+  space?: Space;
   /**
    * On hover effect for link
    */
-  hover?: Hover
+  hover?: Hover;
   /**
    * Set border radius
    */
-  radius?: Radius
+  radius?: Radius;
   /**
    * Is link active amont other html elements?
    */
-  isActive?: boolean
+  isActive?: boolean;
   /**
    * Clickable content displayed inside link
    */
-  children: React.ReactNode
+  children: React.ReactNode;
 }

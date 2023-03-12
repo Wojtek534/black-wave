@@ -1,19 +1,14 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import {Panel} from "../../components/layout/Panel"
-import {Button, Navigate, Image} from "../../components/common"
-import {InputText, InputPassword} from "../../components/form"
-import {
-  Appearance,
-  ButtonSize,
-  NavigationSize,
-  Space,
-} from "../../components/types"
-import {classNames} from "../../components/utilities"
-import {Formline} from "../../components/layout/Formline"
-import payment_01 from "../../assets/img/payment_01.jpg"
-import logo from "../../assets/svg/logo.svg"
+import { Panel } from '../../components/layout/Panel';
+import { Button, Navigate, Image } from '../../components/common';
+import { InputText, InputPassword } from '../../components/form';
+import { Appearance, ButtonSize, NavigationSize, Space } from '../../components/types';
+import { classNames } from '../../components/utilities';
+import { Formline } from '../../components/layout/Formline';
+import payment_01 from '../../assets/img/payment_01.jpg';
+import logo from '../../assets/svg/logo.svg';
 
 interface LoginProps {}
 
@@ -21,24 +16,15 @@ export function Login({}: LoginProps) {
   return (
     <main
       className={classNames(
-        `min-h-screen grid gap-4 grid-cols-1 md:grid-cols-2 grid-rows-1 ml-0 mr-0 sm:ml-5 sm:mr-5 md:ml-10 md:mr-10 lg:ml-40 lg:mr-40 items-center`
+        `min-h-screen grid gap-4 grid-cols-1 md:grid-cols-2 grid-rows-1 ml-0 mr-0 sm:ml-5 sm:mr-5 md:ml-10 md:mr-10 lg:ml-40 lg:mr-40 items-center`,
       )}
     >
       <div className="h-[10rem] sm:h-[20rem] md:h-[30rem] lg:h[50rem] hidden md:block">
-        <Image
-          src={payment_01}
-          alt="payment image"
-          height="h-full"
-          width="w-full"
-        />
+        <Image src={payment_01} alt="payment image" height="h-full" width="w-full" />
       </div>
       <div className="flex items-center">
         <div className="flex-1">
-          <Panel
-            showHeader={false}
-            margin="m-0"
-            appearance={Appearance.GrayTransparent}
-          >
+          <Panel showHeader={false} margin="m-0" appearance={Appearance.GrayTransparent}>
             <form className="flex flex-col items-stretch justify-center max-w-lg">
               <div className="self-center items-center">
                 <Image
@@ -52,17 +38,17 @@ export function Login({}: LoginProps) {
               <div className="text-3xl mb-2 self-center">Welcome</div>
               <Formline label="Email address" isVertical={true}>
                 <InputText
-                  value={"test@email.com"}
+                  value={'test@email.com'}
                   onChange={(value: string) => {
-                    console.log(value)
+                    console.log(value);
                   }}
                 />
               </Formline>
               <Formline label="Password" isVertical={true}>
                 <InputPassword
-                  value={"123456"}
+                  value={'123456'}
                   onChange={(value: string) => {
-                    console.log(value)
+                    console.log(value);
                   }}
                 />
               </Formline>
@@ -95,5 +81,5 @@ export function Login({}: LoginProps) {
         </div>
       </div>
     </main>
-  )
+  );
 }

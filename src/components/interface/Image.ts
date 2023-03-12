@@ -1,28 +1,28 @@
-import {Space, Radius, Height, Width} from "../types"
+import { Space, Radius, Height, Width } from '../types';
 
 export interface ImageProps {
   /**
    * Image source like jpg/png or svg
    */
-  src?: string
+  src?: string;
   /**
    * Image alt, for accesabilities
    */
-  alt?: string
+  alt?: string;
   /**
    *  Margin around button
    */
-  space?: Space
+  space?: Space;
   /**
    * Image height size
    */
-  height?: Height
+  height?: Height;
   /**
    * Image width size
    */
-  width?: Width
+  width?: Width;
   /**
    * Image radius
    */
-  radius?: Radius
+  radius?: Radius;
 }

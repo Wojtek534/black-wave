@@ -1,72 +1,66 @@
-import {useEffect, useState} from "react"
-import {Icon} from "../common"
-import {IconList, StrokeColor, IconSize} from "../types"
+import { useEffect, useState } from 'react';
+import { Icon } from '../common';
+import { IconList, StrokeColor, IconSize } from '../types';
 
 export function ThemeSwitch(): JSX.Element {
-  const themeKey = "theme"
-  const lightTheme = "light"
-  const darkTheme = "dark"
-  const [theme, setTheme] = useState("")
+  const themeKey = 'theme';
+  const lightTheme = 'light';
+  const darkTheme = 'dark';
+  const [theme, setTheme] = useState('');
 
   useEffect(() => {
-    const ls = localStorage.getItem(themeKey)
+    const ls = localStorage.getItem(themeKey);
     switch (ls) {
       case lightTheme: {
-        setTheme(lightTheme)
-        document.documentElement.classList.add(lightTheme)
-        break
+        setTheme(lightTheme);
+        document.documentElement.classList.add(lightTheme);
+        break;
       }
       case darkTheme: {
-        setTheme(darkTheme)
-        document.documentElement.classList.add(darkTheme)
-        break
+        setTheme(darkTheme);
+        document.documentElement.classList.add(darkTheme);
+        break;
       }
       default: {
-        setTheme(lightTheme)
-        localStorage.setItem(themeKey, lightTheme)
-        document.documentElement.classList.add(lightTheme)
+        setTheme(lightTheme);
+        localStorage.setItem(themeKey, lightTheme);
+        document.documentElement.classList.add(lightTheme);
       }
     }
-  }, [])
+  }, []);
 
   function setThemeClass(newTheme: string): void {
-    if (
-      newTheme !== lightTheme &&
-      document.documentElement.classList.contains(lightTheme)
-    ) {
-      document.documentElement.classList.remove(lightTheme)
-    } else if (
-      newTheme !== darkTheme &&
-      document.documentElement.classList.contains(darkTheme)
-    ) {
-      document.documentElement.classList.remove(darkTheme)
+    if (newTheme !== lightTheme && document.documentElement.classList.contains(lightTheme)) {
+      document.documentElement.classList.remove(lightTheme);
+    } else if (newTheme !== darkTheme && document.documentElement.classList.contains(darkTheme)) {
+      document.documentElement.classList.remove(darkTheme);
     }
-    document.documentElement.classList.add(newTheme)
+    document.documentElement.classList.add(newTheme);
   }
 
   function switchTheme(): void {
     switch (theme) {
       case lightTheme: {
-        setTheme(darkTheme)
-        localStorage.setItem(themeKey, darkTheme)
-        setThemeClass(darkTheme)
-        break
+        setTheme(darkTheme);
+        localStorage.setItem(themeKey, darkTheme);
+        setThemeClass(darkTheme);
+        break;
       }
       case darkTheme: {
-        setTheme(lightTheme)
-        localStorage.setItem(themeKey, lightTheme)
-        setThemeClass(lightTheme)
-        break
+        setTheme(lightTheme);
+        localStorage.setItem(themeKey, lightTheme);
+        setThemeClass(lightTheme);
+        break;
       }
       default:
-        break
+        break;
     }
   }
   return (
     <div
       className="p-1 flex items-center bg-header dark:bg-dark-header rounded cursor-pointer brightness-100 hover:brightness-90 duration-300"
       onClick={() => {
-        switchTheme()
+        switchTheme();
       }}
     >
       <Icon
@@ -75,5 +69,5 @@ export function ThemeSwitch(): JSX.Element {
         size={IconSize.Large}
       />
     </div>
-  )
+  );
 }

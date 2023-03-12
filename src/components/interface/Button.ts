@@ -1,78 +1,70 @@
-import {
-  ButtonSize,
-  ButtonIconSize,
-  Appearance,
-  FontWeight,
-  Hover,
-  Radius,
-  Space,
-} from "../types"
+import { ButtonSize, ButtonIconSize, Appearance, FontWeight, Hover, Radius, Space } from '../types';
 
 export interface ButtonProps extends ButtonCommonProps {
   /**
    * Button size
    */
-  buttonSize?: ButtonSize
+  buttonSize?: ButtonSize;
 }
 
 export interface ButtonIconProps extends ButtonCommonProps {
   /**
    * Button icon size
    */
-  buttonIconSize?: ButtonIconSize
+  buttonIconSize?: ButtonIconSize;
 }
 
 export interface ButtonCommonProps {
   /**
    * Button styling appearance
    */
-  appearance: Appearance
+  appearance: Appearance;
   /**
    * Button styling when param 'isActive' is true
    */
-  active?: Appearance
+  active?: Appearance;
   /**
    * Clickable button name font weight
    */
-  fontWeight?: FontWeight
+  fontWeight?: FontWeight;
   /**
    * On hover effect for button
    */
-  hover?: Hover
+  hover?: Hover;
   /**
    * Set border radius
    */
-  radius?: Radius
+  radius?: Radius;
   /**
    *  Margin around button
    */
-  space?: Space
+  space?: Space;
   /**
    * Display button as icon
    */
-  isIcon?: boolean
+  isIcon?: boolean;
   /**
    * Action fired on button click
    */
-  onClick?: () => void
+  onClick?: () => void;
   /**
    * Additional text displayed on hover
    */
-  title?: string
+  title?: string;
   /**
    * Set button property for disabled
    */
-  isDisabled?: boolean
+  isDisabled?: boolean;
   /**
    * Set button property for submit
    */
-  isSubmit?: boolean
+  isSubmit?: boolean;
   /**
    * Is button active amont other html elements?
    */
-  isActive?: boolean
+  isActive?: boolean;
   /**
    * Clickable content displayed inside button
    */
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }

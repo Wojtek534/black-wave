@@ -1,28 +1,28 @@
-import {Appearance, Space} from "../types"
+import { Appearance, Space } from '../types';
 
 export interface PanelProps {
   /**
    * Text displayed in panels' header left side
    */
-  name?: string
+  name?: string;
   /**
    * Actions displayed in panel's header right side
    */
-  action?: React.ReactNode
+  action?: React.ReactNode;
   /**
    * Component appearance
    */
-  appearance?: Appearance
+  appearance?: Appearance;
   /**
    *  Margin around button
    */
-  margin?: Space
+  margin?: Space;
   /**
    * Show / hide panel's header
    */
-  showHeader?: boolean
+  showHeader?: boolean;
   /**
    * Panel's content
    */
-  children: React.ReactNode
+  children: React.ReactNode;
 }

@@ -1,17 +1,11 @@
-import {Image} from "../common/Image"
+import { Image } from '../common/Image';
 
 interface AvatarProps {
-  src: string
+  src: string;
 }
 
-export function Avatar({src}: AvatarProps): JSX.Element {
+export function Avatar({ src }: AvatarProps): JSX.Element {
   return (
-    <Image
-      src={src}
-      alt="user avatar"
-      height="h-12"
-      width="w-12"
-      radius="rounded-full"
-    ></Image>
-  )
+    <Image src={src} alt="user avatar" height="h-12" width="w-12" radius="rounded-full"></Image>
+  );
 }

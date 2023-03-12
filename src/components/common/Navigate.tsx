@@ -1,14 +1,6 @@
-import {classNames} from "../utilities"
-import {
-  Appearance,
-  FontSize,
-  FontWeight,
-  Space,
-  Radius,
-  Hover,
-  NavigationSize,
-} from "../types"
-import {NavigateProps} from "../interface"
+import { classNames } from '../utilities';
+import { Appearance, FontSize, FontWeight, Space, Radius, Hover, NavigationSize } from '../types';
+import { NavigateProps } from '../interface';
 
 export function Navigate({
   appearance = Appearance.PrimaryText,
@@ -27,15 +19,11 @@ export function Navigate({
   const styling = classNames(
     ` ${
       isActive ? active : appearance
-    } ${appearance} ${fontSize} ${fontWeight} ${space} ${navigationSize} ${radius} ${hover}`
-  )
+    } ${appearance} ${fontSize} ${fontWeight} ${space} ${navigationSize} ${radius} ${hover}`,
+  );
   return (
-    <a
-      className={classNames(`inline-flex ${styling}`)}
-      href={href ? href : ""}
-      {...props}
-    >
+    <a className={classNames(`inline-flex ${styling}`)} href={href ? href : ''} {...props}>
       {children}
     </a>
-  )
+  );
 }

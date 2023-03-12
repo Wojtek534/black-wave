@@ -1,12 +1,12 @@
-import {Disclosure} from "@headlessui/react"
-import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid"
-import {classNames} from "../utilities"
-import {ThemeSwitch} from "./ThemeSwitch"
-import {SiteHeaderProps} from "../interface"
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import { classNames } from '../utilities';
+import { ThemeSwitch } from './ThemeSwitch';
+import { SiteHeaderProps } from '../interface';
 
 export function SiteHeader({
   name,
-  height = "h-12",
+  height = 'h-12',
   rightContent = <ThemeSwitch />,
   children,
 }: SiteHeaderProps): JSX.Element {
@@ -15,11 +15,11 @@ export function SiteHeader({
       as="nav"
       className={classNames(
         ` bg-header dark:bg-dark-header text-header-text dark:text-dark-header-text border-b border-header-text dark:border-dark-header-text ${
-          height ? height : ""
-        }`
+          height ? height : ''
+        }`,
       )}
     >
-      {({open}) => (
+      {({ open }) => (
         <>
           <div className="flex items-center h-full">
             <div className="flex items-center justify-between h-full w-full">
@@ -28,15 +28,13 @@ export function SiteHeader({
                   key="h"
                   href="/"
                   className={classNames(
-                    `flex-shrink-0 text-primary dark:text-dark-primary text-lg font-bold hover:underline `
+                    `flex-shrink-0 text-primary dark:text-dark-primary text-lg font-bold hover:underline `,
                   )}
                 >
                   {name}
                 </a>
                 <div className="hidden md:block">
-                  <div className="ml-10 flex items-center space-x-3">
-                    {children}
-                  </div>
+                  <div className="ml-10 flex items-center space-x-3">{children}</div>
                 </div>
               </div>
               <div className="items-center hidden md:flex">{rightContent}</div>
@@ -56,15 +54,13 @@ export function SiteHeader({
 
           <Disclosure.Panel
             className={classNames(
-              `md:hidden absolute top-auto left-5 right-5 h-fit z-20 bg-header dark:bg-dark-header`
+              `md:hidden absolute top-auto left-5 right-5 h-fit z-20 bg-header dark:bg-dark-header`,
             )}
           >
-            <div className="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {children}
-            </div>
+            <div className="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">{children}</div>
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-  )
+  );
 }

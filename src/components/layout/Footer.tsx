@@ -1,7 +1,7 @@
 interface FooterProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export function Footer({children}: FooterProps): JSX.Element {
-  return <footer>{children}</footer>
+export function Footer({ children }: FooterProps): JSX.Element {
+  return <footer>{children}</footer>;
 }
