@@ -16,14 +16,14 @@ import {
 import { DropdownProps, DropdownCommonProps, DropdownIconProps } from '../interface';
 
 export function Dropdown({ buttonSize = ButtonSize.Base, ...props }: DropdownProps): JSX.Element {
-  return DropdownCommon({ size: buttonSize, isIcon: false, ...props });
+  return DropdownCommon({ size: buttonSize, ...props });
 }
 
 export function DropdownIcon({
   buttonIconSize = ButtonIconSize.Base,
   ...props
 }: DropdownIconProps): JSX.Element {
-  return DropdownCommon({ size: buttonIconSize, isIcon: false, ...props });
+  return DropdownCommon({ size: buttonIconSize, ...props });
 }
 
 /**
