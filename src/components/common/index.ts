@@ -1,4 +1,3 @@
-export * from './Background';
 export * from './Button';
 export * from './Dropdown';
 export * from './Icon';
