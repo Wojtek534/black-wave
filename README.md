@@ -9,7 +9,7 @@
 ## Submodule
 
 To add repository as submodule to your project simply type:
-```console git submodule add https://github.com/Wojtek534/black-wave.git src/blackwave` (or any preffered path)
+```bash git submodule add https://github.com/Wojtek534/black-wave.git src/blackwave``` (or any preffered path)
 
 ## Requirements:
 
