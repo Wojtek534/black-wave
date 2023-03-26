@@ -1,8 +1,15 @@
-![alt text](https://github.com/Wojtek534/black-wave/blob/main/src/assets/svg/logo.svg)
+![alt text](https://github.com/Wojtek534/black-wave/blob/main/assets/svg/logo.svg)
 
 # [IN PROGRESS] Black Wave
 
 ## React base collection of components with storybook example
+
+## Intended to use as main repository's [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+
+## Submodule
+
+To add repository as submodule to your project simply type:
+```console git submodule add https://github.com/Wojtek534/black-wave.git src/blackwave` (or any preffered path)
 
 ## Requirements:
 
@@ -21,3 +28,16 @@
 1. Clone repository
 2. Type `npm install` or any other package manager
 3. Run `npm run storybook` to launch
+
+### Vs code recommended settings
+
+{
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.formatOnSave": true,
+"eslint.alwaysShowStatus": true,
+"editor.codeActionsOnSave": {
+"source.fixAll.eslint": true
+},
+"prettier.enable": false,
+"vite.autoStart": false
+}
